@@ -7,7 +7,7 @@ I am Jean Pereira, a **Frontend Developer**.
 [![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/5650328/adeel)
 
 ## Skills
-![Affinity Designer](https://img.shields.io/badge/-AffinityDesigner-blue?style=for-the-badge&logo=affinitydesigner)
+![Affinity Designer](https://img.shields.io/badge/-AffinityDesigner-blue?style=for-the-badge&logo=affinity_designer)
 
 
 ## 📝 Top Blog Posts
