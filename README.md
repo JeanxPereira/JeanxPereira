@@ -7,8 +7,14 @@ I am Jean Pereira, a **Frontend Developer**.
 [![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/5650328/adeel)
 
 ## Skills
-![Affinity Designer](https://img.shields.io/badge/-Affinity_Designer-1a73e8?style=for-the-badge&logo=affinitydesigner)
+![Affinity Designer](https://img.shields.io/badge/-Affinity_Designer-134881?style=for-the-badge&logo=affinitydesigner)
+![Photoshop](https://img.shields.io/badge/-Photoshop-31A8FF?style=for-the-badge&logo=photoshop)
+![After Effects](https://img.shields.io/badge/-After_Effects-9999FF?style=for-the-badge&logo=aftereffects)
+![Illustrator](https://img.shields.io/badge/-Illustrator-FF9A00?style=for-the-badge&logo=illustrator)
+![Blender](https://img.shields.io/badge/-Blender-E87D0D?style=for-the-badge&logo=blender)
+![Cinema 4D](https://img.shields.io/badge/-Blender-011A6A?style=for-the-badge&logo=cinema4d)
 
+![HTML](https://img.shields.io/badge/-html-E34F26?style=for-the-badge&logo=html5)
 
 ## 📝 Top Blog Posts
 
