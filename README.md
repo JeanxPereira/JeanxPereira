@@ -9,7 +9,8 @@
 
 ###
 
-<div align="left">
+<div>
+  <h2 >My Skills</p>
   <img src="https://skillicons.dev/icons?i=html" height="56" alt="html5 logo"  />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=css" height="56" alt="css3 logo"  />
@@ -27,19 +28,13 @@
   <img src="https://skillicons.dev/icons?i=ae" height="56" alt="adobeaftereffects logo"  />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=blender" height="56" alt="blender logo"  />
+  <img align="right" height="150" src="https://github.com/JeanxPereira/JeanxPereira/blob/main/avatar.png?raw=true"  />
 </div>
 
 ###
 
-<p align="left">Hello World!!</p>
-
-###
-
-<img align="right" height="150" src="as"  />
-
-###
-
 <div align="left">
+  <h2 >Cotact me</p>
   <a href="https://www.linkedin.com/in/jeanxpereira/" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="78" height="47" alt="linkedin logo"  />
   </a>
