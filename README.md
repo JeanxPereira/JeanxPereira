@@ -21,6 +21,9 @@ When I'm not busy with work or studying, I love playing guitar and listen music,
     - [Lua Decompiler](https://github.com/JeanxPereira/unluac): Lua Decompiler for Darkspore scripts
 
 - [build.prop syntax for VSCode](https://github.com/JeanxPereira/vscode-buildprop-syntax): A extension for VSCode, adds support for the syntax of build.prop used for config on android system
+
+- [Sonner-JS](https://github.com/JeanxPereira/sonner-js): A port of Sonner toast component to javascript vanilla
+
 - [CMI-Sprites](https://github.com/JeanxPereira/CMI-Sprites): A extraction of all sprites from The Curse of Monkey Island
 - [AQS-Sprites](https://github.com/JeanxPereira/AQS-Sprites): A extraction of all sprites from The Ancient Quest of Saqqarah
   
