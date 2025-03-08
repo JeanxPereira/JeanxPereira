@@ -29,7 +29,7 @@ When I'm not busy with work or studying, I love playing guitar and listen music,
   
 #
 <div>
-  <a href="https://github.com/JeanxPereira">
+  <!--<a href="https://github.com/JeanxPereira"> -->
   <img height="180em" src="https://github-readme-stats.vercel.app/api?username=JeanxPereira&show_icons=true&theme=aura&include_all_commits=true&count_private=true"/>
   <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JeanxPereira&layout=compact&langs_count=7&theme=aura"/>
 </div> 
