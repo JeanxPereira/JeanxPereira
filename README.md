@@ -17,7 +17,7 @@ When I'm not busy with work or studying, I love playing guitar and listen music,
 - [Ressurection Capsule](https://github.com/JeanxPereira/resurrection-capsule): A local server for Darkspore game. 
     - [ReCap Server](https://github.com/JeanxPereira/recap_server): Server application for Darkspore ReCap
     - [ReCap Parser](https://github.com/JeanxPereira/recap_parser): A tool that parse data from multiple Darkspore files
-    - [DBPF Unpacker](https://github.com/JeanxPereira/dbpf_unpacker): Unpacker for .package files of Darkspore
+    - [ReCap Unpacker](https://github.com/JeanxPereira/recap_unpacker): Unpacker for .package files of Darkspore
     - [Lua Decompiler](https://github.com/JeanxPereira/unluac): Lua Decompiler for Darkspore scripts
 
 - [build.prop syntax for VSCode](https://github.com/JeanxPereira/vscode-buildprop-syntax): A extension for VSCode, adds support for the syntax of build.prop used for config on android system
