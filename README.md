@@ -18,6 +18,7 @@ When I'm not busy with work or studying, I love playing guitar and listen music,
     - [ReCap Server](https://github.com/JeanxPereira/recap_server): Server application for Darkspore ReCap
     - [ReCap Parser](https://github.com/JeanxPereira/recap_parser): A tool that parse data from multiple Darkspore files
     - [ReCap Unpacker](https://github.com/JeanxPereira/recap_unpacker): Unpacker for .package files of Darkspore
+    - [BMDL Importer](https://github.com/JeanxPereira/BMDL-Importer): Importer for .bmdl (meshes, bones and animations) files of Darkspore for Blender 4.5
     - [Lua Decompiler](https://github.com/JeanxPereira/unluac): Lua Decompiler for Darkspore scripts
 
 - [build.prop syntax for VSCode](https://github.com/JeanxPereira/vscode-buildprop-syntax): A extension for VSCode, adds support for the syntax of build.prop used for config on android system
