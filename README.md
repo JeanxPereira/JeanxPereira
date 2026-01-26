@@ -16,7 +16,7 @@ When I'm not busy with work or studying, I love playing guitar and listen music,
 
 - [Ressurection Capsule](https://github.com/JeanxPereira/resurrection-capsule): A local server for Darkspore game. 
     - [RakNexus](https://github.com/JeanxPereira/RakNexus): C# port of RakNet 3.92 to ReCap
-    - [ReCap.Parser](https://github.com/JeanxPereira/ReCap.Parser): A tool that parse data from multiple Darkspore files
+    - [ReCap.Parser](https://github.com/JeanxPereira/ReCap.Parser): Binary parser for Darkspore asset files
     - [ReCap.Server](https://github.com/JeanxPereira/recap_server): Server application for Darkspore ReCap
     - [ReCap.Unpacker](https://github.com/JeanxPereira/recap_unpacker): Unpacker for .package files of Darkspore
     - [BMDL Importer](https://github.com/JeanxPereira/BMDL-Importer): Importer for .bmdl (meshes, bones and animations) files of Darkspore for Blender 4.5
