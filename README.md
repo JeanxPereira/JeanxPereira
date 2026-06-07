@@ -16,6 +16,7 @@ When I'm not busy with work or studying, I love playing guitar and listen music,
 
 - [Ressurection Capsule](https://github.com/JeanxPereira/resurrection-capsule): A local server for Darkspore game. 
     - [RakNexus](https://github.com/JeanxPereira/RakNexus): C# port of RakNet 3.92 to ReCap
+    - [RakNexus](https://github.com/JeanxPereira/ReCap.WebKit): A modern replacement for Darkspore EAWebkit.dll
     - [AssetData.Parser](https://github.com/JeanxPereira/ReCap.Parser): Binary parser for Darkspore asset files
     - [DBPF.Unpacker](https://github.com/JeanxPereira/recap_unpacker): Unpacker for .package files of Darkspore
     - [ReCap.Server](https://github.com/JeanxPereira/recap_server): Server application for Darkspore ReCap
@@ -29,14 +30,16 @@ When I'm not busy with work or studying, I love playing guitar and listen music,
 - [CMI-Sprites](https://github.com/JeanxPereira/CMI-Sprites): A extraction of all sprites from The Curse of Monkey Island
 - [AQS-Sprites](https://github.com/JeanxPereira/AQS-Sprites): A extraction of all sprites from The Ancient Quest of Saqqarah
   
-#
-<div>
-  <!--<a href="https://github.com/JeanxPereira"> -->
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=JeanxPereira&show_icons=true&theme=aura&include_all_commits=true&count_private=true"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JeanxPereira&layout=compact&langs_count=7&theme=aura"/>
-</div> 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=JeanxPereira&color=blueviolet" alt="Profile views" /> </p>
+# Activity
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=JeanxPereira&color=blueviolet" alt="Profile views" />
+</p>
 
- 
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=JeanxPereira&theme=aura&hide_border=true" />
+</p>
 
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=JeanxPereira&theme=react-dark" />
+</p>
  
