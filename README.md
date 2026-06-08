@@ -20,8 +20,8 @@ When I'm not busy with work or studying, I love playing guitar and listen music,
     - [RakNexus](https://github.com/JeanxPereira/RakNexus): C# port of RakNet 3.92 to ReCap
     - [AssetData.Parser](https://github.com/JeanxPereira/ReCap.Parser): Binary parser for Darkspore asset files
     - [DBPF.Unpacker](https://github.com/JeanxPereira/recap_unpacker): Unpacker for .package files of Darkspore
+    - [ReCap.Luptos](https://github.com/JeanxPereira/ReCap.Luptos): Lua Decompiler for Darkspore scripts
     - [BMDL Importer](https://github.com/JeanxPereira/BMDL-Importer): Importer for .bmdl (meshes, bones and animations) files of Darkspore for Blender 4.5
-    - [Lua Decompiler](https://github.com/JeanxPereira/unluac): Lua Decompiler for Darkspore scripts
 
 - [build.prop syntax for VSCode](https://github.com/JeanxPereira/vscode-buildprop-syntax): A extension for VSCode, adds support for the syntax of build.prop used for config on android system
 
