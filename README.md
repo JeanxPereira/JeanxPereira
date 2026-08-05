@@ -1,6 +1,6 @@
 # 🩻 About Me
 Hey, my name is Jean Pereira.
-I'm a 21 year old I.T. professional with a passion for both technology and creativity. I work in the I.T. field while continuously studying programming.
+I'm a 22 year old I.T. professional with a passion for both technology and creativity. I work in the I.T. field while continuously studying programming.
 In addition to my day-to-day work, I also as a 3D modeler and rigger.
 
 When I'm not busy with work or studying, I love playing guitar and listen music, I'm a huge fan of music like rock, metal, and MPB. I also enjoy reverse engineering programs and games.
