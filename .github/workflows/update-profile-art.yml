@@ -29,10 +29,13 @@ jobs:
       - name: Fetch contributions
         run: python scripts/fetch_contributions.py
 
-      - name: Render heatmap
-        run: python scripts/render_heatmap_svg.py
+      - name: Render heatmaps
+        run: |
+          for theme in violet toxic wine; do
+            THEME=$theme python scripts/render_heatmap_svg.py
+          done
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: refresh contribution heatmap [skip ci]"
-          file_pattern: "data/contributions.json assets/heatmap.svg"
+          file_pattern: "data/contributions.json assets/heatmap*.svg"

@@ -1,7 +1,7 @@
 """Writes assets/info-card.svg: a neofetch-style panel whose lines fade in one by one."""
 
-from common import (ACCENT, ACCENT_2, BORDER, CARD_W, FG, FONT, MUTED, PANEL_H, STATIC, esc,
-                    panel, write)
+from common import (ACCENT, ACCENT_2, BORDER, CARD_W, FG, FONT, MUTED, PANEL_H, STATIC, SWATCHES,
+                    esc, panel, write)
 
 USER = "jean"
 HOST = "github"
@@ -18,8 +18,6 @@ ROWS = [
     ("Formats", "binary parsers, decompilers, unpackers"),
     ("Music", "guitar · rock · metal · MPB"),
 ]
-
-SWATCHES = ["#161b22", "#f85149", "#3fb950", "#d29922", "#58a6ff", ACCENT, "#39c5cf", FG]
 
 PAD_X = 26
 TOP = 74

@@ -1,53 +1,111 @@
-"""Turns avatar.png into assets/ascii.svg: an ASCII portrait typed row by row.
+"""Turns glyph.svg into assets/ascii.svg: the JXP glyph as ASCII, typed row by row.
 
-Run locally once per photo (needs Pillow + numpy). The avatar is already a cutout:
-the person is opaque and the card behind is translucent, so alpha is the mask.
+Run locally whenever the glyph changes (needs Pillow + numpy). The glyph is a flat
+shape, so shading comes from distance to its edge: sparse at the rim, dense inside.
 """
 
 import os
+import re
+import xml.etree.ElementTree as ET
 
 import numpy as np
-from PIL import Image, ImageFilter
+from PIL import Image, ImageChops, ImageDraw, ImageFilter
 
-from common import ACCENT, FG, FONT, PANEL_H, PORTRAIT_W, ROOT, STATIC, esc, panel, write
+from common import ACCENT, ACCENT_2, FONT, PANEL_H, PORTRAIT_W, ROOT, STATIC, esc, panel, write
 
-COLS = 100
+COLS = 64
 PAD = 16
+# Share of the panel left empty around the glyph.
+INSET = 0.04
 # Sparse -> dense. On a dark panel a dense glyph reads as a bright pixel.
-RAMP = " .'`,:;-~+=*ixtfLCG08@"
-# >1 pushes mid-tones toward sparse glyphs, which carves out the face and the suit.
-GAMMA = 1.5
+RAMP = " .:-=+*xX#%@"
 
 ROW_DUR = 0.42
 ROW_STAGGER = 0.035
 
-
-def load_mask_and_luma(path):
-    im = Image.open(path).convert("RGBA")
-    a = np.asarray(im)
-    mask = a[..., 3] >= 200
-    ys, xs = np.nonzero(mask)
-    box = (int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1)
-    im = im.crop(box)
-    mask = mask[box[1]:box[3], box[0]:box[2]]
-    # Unsharp mask stands in for CLAHE: it lifts local contrast (eyes, collar, tie).
-    sharp = im.convert("L").filter(ImageFilter.UnsharpMask(radius=6, percent=160, threshold=2))
-    luma = np.asarray(sharp, dtype=np.float32)
-
-    # Equalize only the person's pixels, so the dark suit and the shirt both get range.
-    vals = np.sort(luma[mask])
-    luma = np.searchsorted(vals, luma) / len(vals)
-    luma[~mask] = 0
-    return Image.fromarray((luma * 255).astype(np.uint8)), Image.fromarray(mask.astype(np.uint8) * 255)
+SVG_NS = "{http://www.w3.org/2000/svg}"
 
 
-def fit(img, w, h):
-    """Contain img in a w x h canvas, centered horizontally, pinned to the bottom."""
-    scale = min(w / img.width, h / img.height)
-    nw, nh = max(1, round(img.width * scale)), max(1, round(img.height * scale))
-    out = Image.new("L", (w, h), 0)
-    out.paste(img.resize((nw, nh), Image.Resampling.BOX), ((w - nw) // 2, h - nh))
-    return out
+def matrix(transform):
+    """Only matrix(...) is handled; that is all the glyph's export uses."""
+    m = np.identity(3)
+    for args in re.findall(r"matrix\(([^)]*)\)", transform or ""):
+        a, b, c, d, e, f = (float(v) for v in re.split(r"[\s,]+", args.strip()))
+        m = m @ np.array([[a, c, e], [b, d, f], [0, 0, 1]])
+    return m
+
+
+def subpaths(d):
+    """Flattens an absolute M/L/C/Z path into closed polygons."""
+    tokens = re.findall(r"[MLCZ]|-?\d*\.?\d+(?:e-?\d+)?", d)
+    if any(t.isalpha() and t not in "MLCZ" for t in tokens):
+        raise SystemExit("glyph.svg path uses commands other than M/L/C/Z")
+    polys, cur, i, cmd = [], [], 0, None
+    while i < len(tokens):
+        if tokens[i].isalpha():
+            cmd = tokens[i]
+            i += 1
+            if cmd == "Z":
+                polys.append(cur)
+                cur = []
+            continue
+        if cmd == "M":
+            if cur:
+                polys.append(cur)
+            cur = [(float(tokens[i]), float(tokens[i + 1]))]
+            cmd, i = "L", i + 2
+        elif cmd == "L":
+            cur.append((float(tokens[i]), float(tokens[i + 1])))
+            i += 2
+        elif cmd == "C":
+            p0 = np.array(cur[-1])
+            p1, p2, p3 = (np.array([float(tokens[i + k]), float(tokens[i + k + 1])]) for k in (0, 2, 4))
+            for t in np.linspace(0, 1, 25)[1:]:
+                cur.append(tuple((1 - t) ** 3 * p0 + 3 * (1 - t) ** 2 * t * p1 + 3 * (1 - t) * t * t * p2 + t ** 3 * p3))
+            i += 6
+    if cur:
+        polys.append(cur)
+    return polys
+
+
+def load_polygons(path):
+    polys = []
+
+    def walk(node, m):
+        m = m @ matrix(node.get("transform"))
+        if node.tag == SVG_NS + "path":
+            for poly in subpaths(node.get("d")):
+                pts = np.c_[np.array(poly), np.ones(len(poly))] @ m.T
+                polys.append(pts[:, :2])
+        for child in node:
+            walk(child, m)
+
+    walk(ET.parse(path).getroot(), np.identity(3))
+    return polys
+
+
+def rasterize(polys, w, h):
+    """Contains the glyph in a w x h canvas, centered; even-odd fill via XOR of subpaths."""
+    pts = np.vstack(polys)
+    lo, hi = pts.min(axis=0), pts.max(axis=0)
+    scale = min(w, h) * (1 - 2 * INSET) / max(hi - lo)
+    offset = np.array([w, h]) / 2 - (lo + hi) / 2 * scale
+    mask = Image.new("1", (w, h), 0)
+    for poly in polys:
+        layer = Image.new("1", (w, h), 0)
+        ImageDraw.Draw(layer).polygon([tuple(p) for p in poly * scale + offset], fill=1)
+        mask = ImageChops.logical_xor(mask, layer)
+    return mask.convert("L")
+
+
+def edge_distance(mask, steps):
+    """Approximate distance to the edge by counting how many erosions each pixel survives."""
+    dist = np.zeros((mask.height, mask.width), dtype=np.float32)
+    cur = mask
+    for _ in range(steps):
+        dist += np.asarray(cur, dtype=np.float32) / 255
+        cur = cur.filter(ImageFilter.MinFilter(3))
+    return Image.fromarray((dist / max(dist.max(), 1) * 255).astype(np.uint8))
 
 
 def main():
@@ -56,23 +114,25 @@ def main():
     rows = int((PANEL_H - 2 * PAD) / lh)
     lh = (PANEL_H - 2 * PAD) / rows
 
-    luma, mask = load_mask_and_luma(os.path.join(ROOT, "avatar.png"))
     # Work at a fine pixel grid with the cell aspect, then average down to one value per cell.
-    gw = COLS * 4
+    sub = 8
+    gw = COLS * sub
     gh_px = round(gw * (lh / cw) * rows / COLS)
-    luma = fit(luma, gw, gh_px).resize((COLS, rows), Image.Resampling.BOX)
-    mask = fit(mask, gw, gh_px).resize((COLS, rows), Image.Resampling.BOX)
-    luma = np.asarray(luma, dtype=np.float32) / 255
-    mask = np.asarray(mask, dtype=np.float32) / 255
+    fine = rasterize(load_polygons(os.path.join(ROOT, "glyph.svg")), gw, gh_px)
+    dist = edge_distance(fine, steps=sub * 4).resize((COLS, rows), Image.Resampling.BOX)
+    cover = fine.resize((COLS, rows), Image.Resampling.BOX)
+    dist = np.asarray(dist, dtype=np.float32) / 255
+    cover = np.asarray(cover, dtype=np.float32) / 255
 
     lines = []
     for r in range(rows):
         chars = []
         for c in range(COLS):
-            if mask[r, c] < 0.5:
+            if cover[r, c] < 0.3:
                 chars.append(" ")
                 continue
-            v = luma[r, c] ** GAMMA
+            # Partly covered cells sit on the rim: keep them light so the outline stays crisp.
+            v = cover[r, c] * (0.3 + 0.7 * dist[r, c] ** 0.5)
             chars.append(RAMP[min(len(RAMP) - 1, 1 + int(v * (len(RAMP) - 1)))])
         lines.append("".join(chars))
 
@@ -114,10 +174,9 @@ def main():
 
     svg = (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{PORTRAIT_W}" height="{PANEL_H}" '
-        f'viewBox="0 0 {PORTRAIT_W} {PANEL_H}" role="img" aria-label="ASCII portrait of Jean Pereira">'
+        f'viewBox="0 0 {PORTRAIT_W} {PANEL_H}" role="img" aria-label="JXP glyph in ASCII">'
         f'<defs><linearGradient id="ink" x1="0" y1="0" x2="0" y2="{PANEL_H}" gradientUnits="userSpaceOnUse">'
-        f'<stop offset="0" stop-color="{FG}"/><stop offset="0.55" stop-color="#c4b5fd"/>'
-        f'<stop offset="1" stop-color="{ACCENT}"/></linearGradient>{"".join(defs)}</defs>'
+        f'<stop offset="0" stop-color="{ACCENT}"/><stop offset="1" stop-color="{ACCENT_2}"/></linearGradient>{"".join(defs)}</defs>'
         f"{panel(PORTRAIT_W, PANEL_H)}"
         f'<g font-family="{FONT}" font-size="{lh * 1.02:.2f}" fill="url(#ink)" xml:space="preserve">'
         f'{"".join(body)}</g></svg>\n'

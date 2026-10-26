@@ -4,8 +4,8 @@
 
 <table>
   <tr>
-    <td valign="top"><img src="assets/ascii.svg" width="370" alt="ASCII portrait of Jean Pereira"></td>
-    <td valign="top"><img src="assets/info-card.svg" width="490" alt="Role: IT pro, reverse engineer, 3D rigger. Now: CrystalOSD. Stack: C++26, C#, Python, TypeScript, Vulkan."></td>
+    <td valign="top"><img src="assets/ascii-wine.svg" width="370" alt="JXP glyph in ASCII"></td>
+    <td valign="top"><img src="assets/info-card-wine.svg" width="490" alt="Role: IT pro, reverse engineer, 3D rigger. Now: CrystalOSD. Stack: C++26, C#, Python, TypeScript, Vulkan."></td>
   </tr>
 </table>
 
@@ -60,10 +60,10 @@ I also do 3D modeling and rigging. Away from the screen I play guitar and listen
 
 <h3>jean@github ~ $ git log --since="1 year ago"</h3>
 
-<img src="assets/heatmap.svg" width="860" alt="Contribution heatmap for the last 12 months">
+<img src="assets/heatmap-wine.svg" width="860" alt="Contribution heatmap for the last 12 months">
 
 <br><br>
 
-<img src="https://komarev.com/ghpvc/?username=JeanxPereira&color=blueviolet" alt="Profile views">
+<img src="https://komarev.com/ghpvc/?username=JeanxPereira&color=a01c34" alt="Profile views">
 
 </div>

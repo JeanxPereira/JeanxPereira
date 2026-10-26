@@ -7,9 +7,8 @@ import json
 import os
 from datetime import date
 
-from common import ACCENT, BORDER, DATA, FG, FONT, HEATMAP_W, MUTED, STATIC, panel, write
-
-LEVELS = ["#161b22", "#2e1f5e", "#4c2f9e", "#7c5cdb", "#b39dff"]
+from common import (ACCENT, BORDER, DATA, FG, FONT, HEATMAP_W, LEVELS, MUTED, STATIC, panel,
+                    write)
 
 CELL = 12
 GAP = 3
