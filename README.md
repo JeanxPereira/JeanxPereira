@@ -1,45 +1,69 @@
-# 🩻 About Me
-Hey, my name is Jean Pereira.
-I'm a 22 year old I.T. professional with a passion for both technology and creativity. I work in the I.T. field while continuously studying programming.
-In addition to my day-to-day work, I also as a 3D modeler and rigger.
+<div align="center">
 
-When I'm not busy with work or studying, I love playing guitar and listen music, I'm a huge fan of music like rock, metal, and MPB. I also enjoy reverse engineering programs and games.
+<h3>jean@github ~ $ neofetch</h3>
 
-##
-**Main Languages:**
-- <img align="center" alt="javascript" height="30" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg"> <img align="center" alt="typescript" height="30" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg"> <img align="center" alt="ImHexPatLang" height="30" width="30" src="https://raw.githubusercontent.com/WerWolv/ImHex/refs/heads/master/resources/icon.svg"> <img align="center" alt="Python" height="30" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"> <img align="center" alt="cs" height="30" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg">
+<table>
+  <tr>
+    <td valign="top"><img src="assets/ascii.svg" width="370" alt="ASCII portrait of Jean Pereira"></td>
+    <td valign="top"><img src="assets/info-card.svg" width="490" alt="Role: IT pro, reverse engineer, 3D rigger. Now: CrystalOSD. Stack: C++26, C#, Python, TypeScript, Vulkan."></td>
+  </tr>
+</table>
 
-**Learning:**
-- <img align="center" height="30" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-plain.svg" /> <img align="center" height="30" width="30" src="https://raw.githubusercontent.com/rust-lang/rust-artwork/refs/heads/master/logo/rust-logo.png" /> <img align="center" alt="c++" height="30" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg"> <img align="center" alt="c" height="30" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg">
+<br>
 
-## ⚗️ Projects
+<h3>jean@github ~ $ cat about.txt</h3>
 
-- [Ressurection Capsule](https://github.com/JeanxPereira/resurrection-capsule): A local server for Darkspore game. 
-    - [ReCap.Server](https://github.com/JeanxPereira/recap_server): Server application for Darkspore ReCap
-    - [ReCap.WebKit](https://github.com/JeanxPereira/ReCap.WebKit): A modern replacement for Darkspore EAWebkit.dll
-    - [RakNexus](https://github.com/JeanxPereira/RakNexus): C# port of RakNet 3.92 to ReCap
-    - [AssetData.Parser](https://github.com/JeanxPereira/ReCap.Parser): Binary parser for Darkspore asset files
-    - [DBPF.Unpacker](https://github.com/JeanxPereira/recap_unpacker): Unpacker for .package files of Darkspore
-    - [ReCap.Luptos](https://github.com/JeanxPereira/ReCap.Luptos): Lua Decompiler for Darkspore scripts
-    - [BMDL Importer](https://github.com/JeanxPereira/BMDL-Importer): Importer for .bmdl (meshes, bones and animations) files of Darkspore for Blender 4.5
+I'm Jean Pereira. I work in IT and spend my free time taking programs and games apart:<br>
+reverse engineering, rebuilding them natively, and writing tools for their formats.<br>
+I also do 3D modeling and rigging. Away from the screen I play guitar and listen to rock, metal and MPB.
 
-- [build.prop syntax for VSCode](https://github.com/JeanxPereira/vscode-buildprop-syntax): A extension for VSCode, adds support for the syntax of build.prop used for config on android system
+<br>
 
-- [Sonner-JS](https://github.com/JeanxPereira/sonner-js): A port of Sonner toast component to javascript vanilla
+<h3>jean@github ~ $ ls ~/projects</h3>
 
-- [CMI-Sprites](https://github.com/JeanxPereira/CMI-Sprites): A extraction of all sprites from The Curse of Monkey Island
-- [AQS-Sprites](https://github.com/JeanxPereira/AQS-Sprites): A extraction of all sprites from The Ancient Quest of Saqqarah
-  
-# Activity
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=JeanxPereira&color=blueviolet" alt="Profile views" />
-</p>
+</div>
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=JeanxPereira&theme=aura&hide_border=true" />
-</p>
+**PS2 and console reverse engineering**
 
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=JeanxPereira&theme=react-dark" />
-</p>
- 
+| Project | What it is |
+| --- | --- |
+| [CrystalOSD](https://github.com/JeanxPereira/CrystalOSD) | The PS2 OSDSYS (Crystal Clock, menus, opening, Browser) reimplemented natively in C++26 and Vulkan, bit-faithful to the console |
+| [Watson](https://github.com/JeanxPereira/Watson) | PCSX2 instrumented with an MCP server: EE/IOP probes, GIF/GS and SPU2 traces, frame-exact captures |
+| [GoWToolkit](https://github.com/JeanxPereira/GoWToolkit) | Cross-platform toolkit for browsing, inspecting and extracting God of War game assets |
+| [OnyxSDK](https://github.com/JeanxPereira/OnyxSDK) | A reusable game-asset-explorer SDK |
+| [Icon-Composer](https://github.com/JeanxPereira/Icon-Composer) | Apple's Icon Composer decoded and reimplemented: the `.icon` format read from the binary that writes it |
+
+**[Resurrection Capsule](https://github.com/JeanxPereira/resurrection-capsule): a local server for Darkspore**
+
+| Project | What it is |
+| --- | --- |
+| [ReCap.Server](https://github.com/JeanxPereira/recap_server) | Server application for Darkspore ReCap |
+| [ReCap.WebKit](https://github.com/JeanxPereira/ReCap.WebKit) | A modern replacement for Darkspore's `EAWebkit.dll` |
+| [RakNexus](https://github.com/JeanxPereira/RakNexus) | C# port of RakNet 3.92 for ReCap |
+| [AssetData.Parser](https://github.com/JeanxPereira/ReCap.Parser) | Binary parser for Darkspore asset files |
+| [DBPF.Unpacker](https://github.com/JeanxPereira/recap_unpacker) | Unpacker for Darkspore `.package` files |
+| [ReCap.Luptos](https://github.com/JeanxPereira/ReCap.Luptos) | Lua decompiler for Darkspore scripts |
+| [BMDL Importer](https://github.com/JeanxPereira/BMDL-Importer) | Blender 4.5 importer for Darkspore `.bmdl` meshes, bones and animations |
+
+**Other**
+
+| Project | What it is |
+| --- | --- |
+| [build.prop syntax](https://github.com/JeanxPereira/vscode-buildprop-syntax) | VS Code syntax support for Android `build.prop` files |
+| [Sonner-JS](https://github.com/JeanxPereira/sonner-js) | A port of the Sonner toast component to vanilla JavaScript |
+| [CMI-Sprites](https://github.com/JeanxPereira/CMI-Sprites) | Every sprite extracted from The Curse of Monkey Island |
+| [AQS-Sprites](https://github.com/JeanxPereira/AQS-Sprites) | Every sprite extracted from The Ancient Quest of Saqqarah |
+
+<div align="center">
+
+<br>
+
+<h3>jean@github ~ $ git log --since="1 year ago"</h3>
+
+<img src="assets/heatmap.svg" width="860" alt="Contribution heatmap for the last 12 months">
+
+<br><br>
+
+<img src="https://komarev.com/ghpvc/?username=JeanxPereira&color=blueviolet" alt="Profile views">
+
+</div>
