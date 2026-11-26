@@ -1,9 +1,9 @@
 {
  "user": "JeanxPereira",
- "total": 2127,
- "active_days": 130,
- "current_streak": 31,
- "longest_streak": 31,
+ "total": 2128,
+ "active_days": 131,
+ "current_streak": 32,
+ "longest_streak": 32,
  "best_day": {
   "date": "2026-10-31",
   "count": 147
@@ -21,7 +21,7 @@
   "2026-08": 458,
   "2026-09": 463,
   "2026-10": 623,
-  "2026-11": 57
+  "2026-11": 58
  },
  "days": [
   {
@@ -1861,6 +1861,11 @@
   },
   {
    "date": "2026-11-25",
+   "level": 1,
+   "count": 1
+  },
+  {
+   "date": "2026-11-26",
    "level": 0,
    "count": 0
   }
